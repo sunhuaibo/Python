@@ -9,7 +9,7 @@ import argparse
 from collections import defaultdict
 #from gzip import open as gz_open
 def usage():
-    print 'Usage: python %s <infile.fna> > derep.fana' %(sys.argv[0])
+    print 'Usage: python %s <infile.fna> > derep.fna' %(sys.argv[0])
 
 
 def read_fasta(fa):
