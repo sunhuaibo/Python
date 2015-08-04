@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+
+__author__ = "Huaibo Sun"
+__email__ = "sunhuaibo@novogene.com"
+__version__ = "V1.0"
+__data__ = "2015-07-25"
+
 import sys
 from gzip import open as gz_open
 import argparse
