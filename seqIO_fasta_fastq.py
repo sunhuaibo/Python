@@ -1,10 +1,4 @@
 #!/usr/bin/env python
-
-__author__ = "Huaibo Sun"
-__email__ = "sunhuaibo@novogene.com"
-__version__ = "V1.0"
-__data__ = "2015-07-25"
-
 import sys
 from gzip import open as gz_open
 import argparse
@@ -52,22 +46,26 @@ def read_fastq(fq):
         yield (seq_name, seq_base, seq_qual)
 
 def main():
-    fr_type = {}
-    fr_type['fasta'] = read_fasta
-    fr_type['fastq'] = read_fastq
+#    fr_type = {}
+#    fr_type['fasta'] = read_fasta
+#    fr_type['fastq'] = read_fastq
 #    sequence_read_fp = sys.argv[1]
     sequence_read_fp = args['input']
+    fw = open(args["output"],'w')
     if sequence_read_fp.endswith('.gz'):
         sequence_read_f = gz_open(sequence_read_fp, 'rb')
     else:
         sequence_read_f = open(sequence_read_fp, 'U')
     if args['file_type'] == 'fastq':
         for seq_name, seq_base ,seq_qual in read_fastq(sequence_read_f):
-            print "%s\n%s\n%s" %(seq_name,seq_base,seq_qual)
+#            print "%s\n%s\n%s" %(seq_name,seq_base,seq_qual)
+            fw.write("%s\n%s\n%s" %(seq_name,seq_base,seq_qual)+"\n")
     if args['file_type'] == 'fasta':
         for seq_name, seq_base in read_fasta(sequence_read_f):
-            print ">%s\n%s" %(seq_name,seq_base)
+#            print ">%s\n%s" %(seq_name,seq_base)
+            fw.write(">%s\n%s" %(seq_name,seq_base)+"\n")
     sequence_read_f.close()
+    fw.close()
 
 if __name__ == '__main__':
     main()
