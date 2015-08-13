@@ -2,6 +2,12 @@
 import sys
 from gzip import open as gz_open
 import argparse
+
+__author__ = "Huaibo Sun"
+__email__ = "huaibo_sun@foxmail.com"
+__version__ = "V1.0"
+__data__ = "2015-08-04"
+
 parser = argparse.ArgumentParser(description="seqIO functions (fasta,fastq)")
 parser.add_argument('-i','--input',help='input file path',required=True)
 parser.add_argument('-o','--output',help='output file name',default='seq.fasta')
