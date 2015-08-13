@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 __author__ = "Huaibo Sun"
-__email__ = "sunhuaibo@novogene.com"
+__email__ = "huaibo_sun@foxmail.com"
 __version__ = "V1.0"
 __data__ = "2015-08-04"
 import sys
