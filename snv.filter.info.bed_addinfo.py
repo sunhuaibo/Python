@@ -33,7 +33,8 @@ i = 1
 for line in fr:
     line_arr = line.strip().split("\t")
     if i == 1:
-        line_arr.extend(["Case_var_freq","Cosmic"])
+        line_arr = line_arr[0:-1]
+        line_arr.extend(["Gene","cHGVS","pHGVS","Function","Case_var_freq","Cosmic"])
         print "\t".join(line_arr)
     else:
         dic_id = line_arr[0] + "_" + line_arr[1]
