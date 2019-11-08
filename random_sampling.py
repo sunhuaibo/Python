@@ -18,16 +18,13 @@ def sampling(vector,size,replace=True):
     choice = np.random.choice(vector_range, size, replace=replace)
     del vector_range
     count = Counter(choice)
-    for ix,term in enumerate(vector):
-        if count.get(ix,False):
-            vector_return.append(count[ix])
-        else:
-            vector_return.append(0)
+    vector_return = [count.get(x, 0) for x in range(len(vector))]
     return vector_return
 def main():
+    '''This is test'''
     a = [10,5,3,1,1]
     b = sampling(a, 10)
-    print a
-    print b
+    print(a)
+    print(b)
 if __name__ == "__main__":
     main()
